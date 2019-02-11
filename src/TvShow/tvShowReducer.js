@@ -1,7 +1,7 @@
 import {FETCH_ON_AIR} from "./types";
 
 
-const init = [];
+const init = {};
 
 export default function (state = init, action) {
     switch (action.type) {

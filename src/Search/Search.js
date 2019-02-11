@@ -1,13 +1,14 @@
 import React from 'react';
 import {fetchQuery} from "./actions";
 import {connect} from "react-redux";
+import SearchRow from "../components/SearchIRow";
 
 class Search extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             query: '',
-            re:[]
+            re: []
         }
     }
 
@@ -24,15 +25,23 @@ class Search extends React.Component {
                     <button className="btn btn-outline-secondary"
                             type="button" id="button-addon1">
                         <i className="fas fa-search"/>
-                    </button>
+                    </button>tt
                 </div>
                 <input type="text" className="form-control" placeholder="Search..." aria-label="SEarch"
                        aria-describedby="button-addon1" onChange={this.onChangeQuery}/>
 
                 <div>
                     Results
-                    <div>
-
+                    <div style={{position:'absolute',visibility:'visible'}}>
+                        {
+                            this.props.result ?
+                                this.props.result.map(x => {
+                                    return (
+                                        <SearchRow name={x.name} poster={x.logo_path}/>)
+                                })
+                                :
+                                <div>Loading...</div>
+                        }
                     </div>
                 </div>
             </div>
@@ -41,4 +50,8 @@ class Search extends React.Component {
     }
 }
 
-export default connect(null, {fetchQuery})(Search);
+const mapStateFromProps = state => ({
+    result: state.search.results
+});
+
+export default connect(mapStateFromProps, {fetchQuery})(Search);

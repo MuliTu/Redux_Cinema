@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from "react-redux";
 import {fetchMovieById, fetchMovies} from './actions'
 import MovieInCinema from "../components/MediaItem/MediaItem";
+import {Link} from "react-router-dom";
 
 
 class Movies extends React.Component {
@@ -14,9 +15,9 @@ class Movies extends React.Component {
             return (<div>Loading...</div>);
         return (this.props.movies.slice(0, 5)
             .map(x => (
-                <div key={x.id} onClick={() => this.props.fetchMovieById(x.id)}>
+                <Link to={`/movie/${x.id}`} key={x.id} onClick={() => this.props.fetchMovieById(x.id)}>
                     <MovieInCinema poster_path={x.poster_path} title={x.title}/>
-                </div>
+                </Link>
             )))
     };
 

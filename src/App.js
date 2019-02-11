@@ -10,19 +10,23 @@ import {
     Route,
 } from 'react-router-dom'
 import Search from "./Search/Search";
+import Test from "./components/test";
 
 
 class App extends Component {
     render() {
         return (
             <Router>
-                <Provider store={store}>
-                    <div className="App">
-                        <Search/>
-                        <Movies/>
-                        <TvShows/>
-                    </div>
-                </Provider>
+                <div>
+                    <Route path={'/movies'} component={Test}/>
+                    <Provider store={store}>
+                        <div className="App">
+                            <Search/>
+                            <Movies/>
+                            <TvShows/>
+                        </div>
+                    </Provider>
+                </div>
             </Router>
         );
     }
