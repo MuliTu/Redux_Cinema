@@ -1,6 +1,6 @@
 import axios from 'axios'
 import {FETCH_IN_CINEMA} from "./types";
-import {GET_MOVIE_BY_ID, GET_MOVIE_IN_THEITHER} from "../movieApi";
+import {GET_MOVIE_BY_ID, GET_MOVIE_IN_THEITHER} from "../api/movieApi";
 
 export const fetchMovies = () => dispatch => {
     axios.get(GET_MOVIE_IN_THEITHER)
@@ -11,7 +11,10 @@ export const fetchMovies = () => dispatch => {
 
 };
 
-export const fetchMovieById = (id) => dispatch =>{
+export const fetchMovieById = (id) => dispatch => {
     axios.get(GET_MOVIE_BY_ID(id))
-        .then(result => console.log(result))
-}
+        .then(({data}) => dispatch({
+            type: FETCH_IN_CINEMA,
+            payload: data
+        }))
+};

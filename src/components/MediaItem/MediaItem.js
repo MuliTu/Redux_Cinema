@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from "../Image";
-import './MediaItem.css'
+import './test.scss'
+import {Link} from "react-router-dom";
 
 const MovieInCinema = ({poster_path, title}) => {
     return (

@@ -1,1 +1,2 @@
 export const FETCH_IN_CINEMA = 'FETCH_IN_CINEMA';
+export const FETCH_MOVIE_BY_ID = 'FETCH_MOVIE_BY_ID';
