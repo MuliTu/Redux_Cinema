@@ -15,6 +15,4 @@ export default function (state = init, action) {
     }
 }
 
-export const getOnAir = (state) => {
-    return getters.getOnAir(state)
-};
+export const getOnAir = (state) => {return getters.getOnAir(state)};

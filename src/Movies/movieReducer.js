@@ -10,6 +10,7 @@ export default function (state = init, action) {
             return {...state, inTheatre: action.payload};
 
         case FETCH_MOVIE_BY_ID:
+            console.log('action',action.payload);
             return {...state, currentMovie: action.payload};
 
         default:
@@ -19,4 +20,6 @@ export default function (state = init, action) {
 }
 
 export const getOnCinema = (state) => {return getters.getOnCinema(state)};
+
+export const getMovieByID = (state) => {return getters.getMovieByID(state)};
 

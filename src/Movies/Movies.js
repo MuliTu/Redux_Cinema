@@ -16,7 +16,9 @@ class Movies extends React.Component {
             return (<div>Loading...</div>);
         return (this.props.movies.slice(0, 5)
             .map(x => (
-                <Link to={`/movie/${x.id}`} key={x.id} onClick={() => this.props.fetchMovieById(x.id)}>
+                <Link to={`/movie/${x.id}`}
+                      key={x.id}
+                      onClick={() => this.props.fetchMovieById(x.id)}>
                     <MovieInCinema poster_path={x.poster_path} title={x.title}/>
                 </Link>
             )))
@@ -40,4 +42,4 @@ const mapStateToProps = state => ({
     movies: getOnCinema(state)
 });
 
-export default connect(mapStateToProps, {fetchMovies, fetchMovieById})(Movies)
+export default connect(mapStateToProps, {fetchMovies,fetchMovieById})(Movies)

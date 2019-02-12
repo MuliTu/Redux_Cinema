@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
-import movieReducer,* as fromMovieReducer from '../Movies/movieReducer'
+import movieReducer , * as fromMovieReducer from '../Movies/movieReducer'
 import tvShowReducer, * as fromTvShowReducer from '../TvShow/tvShowReducer'
-import searchReducer from '../Search/searchReducer'
+import searchReducer, * as fromSearchReducer from '../Search/searchReducer'
 
 export default combineReducers({
         movies: movieReducer,
@@ -9,8 +9,18 @@ export default combineReducers({
         search:searchReducer
     });
 
+//TV Show
 export const getOnAir = (state) => fromTvShowReducer.getOnAir(state.tvshows)
 
+
+// Movie
 export const getOnCinema = (state) => fromMovieReducer.getOnCinema(state.movies)
+export const getMovieByID = (state) => fromMovieReducer.getMovieByID(state.movies)
+
+
+//Search
+export const getSearchResults = (state) => fromSearchReducer.getSearchResults(state.search)
+
+
 
 
