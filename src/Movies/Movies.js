@@ -3,6 +3,7 @@ import {connect} from "react-redux";
 import {fetchMovieById, fetchMovies} from './actions'
 import MovieInCinema from "../components/MediaItem/MediaItem";
 import {Link} from "react-router-dom";
+import {getOnCinema} from "../redux/";
 
 
 class Movies extends React.Component {
@@ -36,7 +37,7 @@ class Movies extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    movies: state.movies.inTheatre
+    movies: getOnCinema(state)
 });
 
 export default connect(mapStateToProps, {fetchMovies, fetchMovieById})(Movies)

@@ -17,3 +17,6 @@ export default function (state = init, action) {
 
     }
 }
+
+export const getOnCinema = (state) => {return state.inTheatre};
+

@@ -3,8 +3,11 @@ import {connect} from "react-redux";
 import {fetch_on_air} from "./actions";
 import MovieInCinema from "../components/MediaItem/MediaItem";
 
+import {getOnAir} from "../redux";
+
+
 class TvShows extends React.Component {
-    componentWillMount() {
+    componentDidMount() {
         this.props.fetch_on_air()
     }
 
@@ -20,6 +23,7 @@ class TvShows extends React.Component {
     };
 
     render() {
+        console.log('this is the props from TVSHOWS ',this.props.tvshows);
         return (
             <div>
                 Movies
@@ -34,7 +38,7 @@ class TvShows extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    tvshows: state.tvshows.onAir
+    tvshows: getOnAir(state)
 });
 
 export default connect(mapStateToProps, {fetch_on_air})(TvShows);
