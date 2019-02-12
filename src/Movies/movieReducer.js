@@ -1,5 +1,5 @@
 import {FETCH_IN_CINEMA, FETCH_MOVIE_BY_ID} from "./types";
-
+import * as getters from './selectors'
 
 const init = {};
 
@@ -18,5 +18,5 @@ export default function (state = init, action) {
     }
 }
 
-export const getOnCinema = (state) => {return state.inTheatre};
+export const getOnCinema = (state) => {return getters.getOnCinema(state)};
 

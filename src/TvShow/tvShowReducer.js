@@ -1,5 +1,5 @@
 import {FETCH_ON_AIR} from "./types";
-
+import * as getters from './selectors'
 
 const init = {};
 
@@ -16,5 +16,5 @@ export default function (state = init, action) {
 }
 
 export const getOnAir = (state) => {
-    return state.onAir
+    return getters.getOnAir(state)
 };
