@@ -6,7 +6,7 @@ import store from './redux/store'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
 import Search from "./Search/Search";
 import News from "./containers/News";
-import TEstComponent from "./components/TEstComponent";
+import MovieComponent from "./components/MovieComponent";
 
 
 class App extends Component {
@@ -17,7 +17,7 @@ class App extends Component {
                 <Provider store={store}>
                     <Search/>
                     <Route exact path={'/'} component={News}/>
-                    <Route path={'/movie/:id'} render={(props)=><TEstComponent {...props}/>}/>
+                    <Route path={'/movie/:id'} render={(props)=><MovieComponent {...props}/>}/>
                 </Provider>
 
             </Router>

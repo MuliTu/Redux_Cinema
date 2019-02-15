@@ -1,0 +1,50 @@
+.movie_component_wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  .top {
+    font-family: 'Russo One', sans-serif;
+    display: flex;
+    height: auto;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    .left {
+      height: 300px;
+      margin-right: 5px;
+      box-shadow: 1px 1px 1px 2px;
+
+    }
+      .background_item{
+        background-color: rgba(0,0,0,0.7);
+        color: red;
+        font-size: 30px;
+      }
+
+  }
+  .body{
+    max-width: 700px;
+    font-size: 4vh;
+    color: gray;
+    .list {
+      border: solid thin black;
+      position: relative;
+      margin: 10px;
+      .title{
+        position: absolute;
+        left: 0;
+        top:0;
+        background-color: rgba(10,10,10,0.4);
+        color: white;
+      }
+      .character{
+        position: absolute;
+        color: white;
+        font-size: x-small;
+        bottom: 0;
+        width: 100%;
+        background-color: black;
+      }
+    }
+  }
+}
+

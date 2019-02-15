@@ -41,6 +41,7 @@ class Search extends React.Component {
                         <i className="fas fa-search"/>
                     </button>
                 </div>
+
                 <input type="text" className="form-control" placeholder="Search..." aria-label="SEarch"
                        aria-describedby="button-addon1" onChange={this.onChangeQuery}
                        onBlur={this.onBlurInputHandler}

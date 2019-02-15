@@ -16,6 +16,8 @@ export const getOnAir = (state) => fromTvShowReducer.getOnAir(state.tvshows)
 // Movie
 export const getOnCinema = (state) => fromMovieReducer.getOnCinema(state.movies)
 export const getMovieByID = (state) => fromMovieReducer.getMovieByID(state.movies)
+export const getMovieCredits = (state) => fromMovieReducer.getMovieCredits(state.movies)
+export const getSimilarMovies = (state) => fromMovieReducer.getSimilarMovies(state.movies)
 
 
 //Search
